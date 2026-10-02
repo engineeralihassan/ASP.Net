@@ -1,0 +1,14 @@
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/bin/Debug/net10.0/C-Sharp
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/bin/Debug/net10.0/C-Sharp.deps.json
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/bin/Debug/net10.0/C-Sharp.runtimeconfig.json
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/bin/Debug/net10.0/C-Sharp.dll
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/bin/Debug/net10.0/C-Sharp.pdb
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/C-Sharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/C-Sharp.AssemblyInfoInputs.cache
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/C-Sharp.AssemblyInfo.cs
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/C-Sharp.csproj.CoreCompileInputs.cache
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/C-Sharp.dll
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/refint/C-Sharp.dll
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/C-Sharp.pdb
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/C-Sharp.genruntimeconfig.cache
+/Users/vits-sd-fe-1010/Desktop/General/C-Sharp/C-Sharp/obj/Debug/net10.0/ref/C-Sharp.dll
