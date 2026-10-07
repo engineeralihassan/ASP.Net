@@ -115,7 +115,32 @@ namespace MethodsFile
             Console.WriteLine("Name2 : " + name + ", " + "Id2 : " + id);
         }
         
+        // C# | Optional Parameters
+        // This method contains two regular
+        // parameters, i.e. fname and lname
+        // And two optional parameters, i.e.
+        // age and branch
+        static public void scholar(string fname, 
+            string lname,
+            int age = 20,
+            string branch = "Computer science")
+
+        {
+            Console.WriteLine("First name: {0}", fname);
+            Console.WriteLine("Last name: {0}", lname);
+            Console.WriteLine("Age: {0}", age);
+            Console.WriteLine("Branch: {0}", branch);
+        }
         
+        
+        // Recursion in C#
+        
+        static void PrintHello(int n){
+            // Base Case
+            if (n == 0) return;
+            Console.WriteLine("Hello");
+            PrintHello(n - 1);
+        }
         
     }
 }
