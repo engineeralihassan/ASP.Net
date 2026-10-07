@@ -30,6 +30,7 @@ public class Desctructors
       
         // Destructor will be called when g goes out of scope
         g.DisplayMessage();
+        
     }
     
 }
