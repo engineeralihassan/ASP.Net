@@ -1348,1007 +1348,879 @@
 //        }
 //    }
 
-////   public class Baseclass
-////    {
-////        public int a=345;
-////        public int b;
-////        protected int c;
-////        public void metho()
-////        {
-////            Console.WriteLine("This is public method of the base class");
-////        }
-
-////        public Baseclass(string mesg)
-////        {
-////            Console.WriteLine("This is constructor of Base Class {0}", mesg);
-////        }
-////        protected void SomeMethod()
-////        {
-////            Console.WriteLine("This is a method of the base class.");
-////        }
-
-////    }
-////    public class Deiveclass : Baseclass
-////    {
-////        public int s;
-////        public Deiveclass() : base("Hello Ali How are You")
-////        {
-////            Console.WriteLine("This is constructor of Derive class");
-////            s = base.a;//
-////        }
-
-
-////    }
-////    class Program2
-////    {
-////        static void Main(string[] args)
-////        {
-////            //consructors in Inheritancey
-////            Deiveclass m1 = new Deiveclass();
-
-////            DerivedClass instance = new DerivedClass();
-////            instance.Age = 30;
-
-////            Console.WriteLine($"Age: {instance.Age}, PublicVar: {instance.PublicVar}, ProtectedVar: {instance.ProtectedVar}");
-
-
-////        }
-
-
-
-////    }
-////    */
-
-
-///////////////////////////////////////////////////////////////
-////// Encapsolations 
-/////////////////////////////////////////////////////////////
-
-
-////    // wrape data | set data | get data
-
-////    /*
-////    class Person
-////    {
-////        // Encapsolation
-////        //make all them private
-////       private  string name;
-////        private int age;
-////        // methods to set data
-////        public void setData(string name, int age)
-////        {
-////            if (string.IsNullOrEmpty(name) && age>0)
-////            {
-////                Console.WriteLine("The name is required age must be positive");
-
-////            }
-////            else
-////            {
-////                this.name = name;
-////                this.age = age;
-
-////            }
-////         // we make methds reads only and write only
-
-
-////        }
-////        public void getData()
-////        {
-////            Console.WriteLine("You name is : {0}", this.name);
-////            Console.WriteLine("your age is {0}",this.age);
-
-
-////        }
-////    }
-
-
-
-
-////     class Program3
-////    {
-////        static void Main(string[] args)
-////        {
-////            Console.WriteLine("All About the Encapsolations");
-////            // make object
-////            Person p1 = new Person();
-////            // p1.name = "Ali Hassan";
-////            // p1.age = 12;// not eccapsolation
-////            p1.setData("Ali Hassan", 21);
-////            p1.getData();
-////        }
-////    }*/
-
-////    ///////////////////////////////////////////////
-////    ///  # Properties with get and set
-////    class Person
-////    {
-////        // Properties 
-////        // set and get  
-////        private string _name;
-////        private int _age;
-////        private string gender = "Male";
-////        public string lastName { get; set; }
-////        public string l1 { private get; set; }
-////        public string l2 { get; private set; }
-////        // static propert
-////        private static string uniName;
-////        private static string depName;
-
-////        public static string UniProperty
-////        {
-////            set
-////            {
-////                uniName = value;
-
-////            }
-
-////            get
-////            {
-
-////                return uniName;
-////            }
-////        }
-////        public static string DepProperty { get; set; }
-
-
-
-////        public Person()
-////        {
-////            l2 = "Amjad Sabri";
-
-////        }
-
-
-
-
-
-
-
-
-
-////        public string Name
-////        {
-////            set
-////            {
-////                if (string.IsNullOrEmpty(value))
-////                {
-////                    Console.WriteLine("Enter something in name");
-
-////                }
-////                else
-////                {
-////                    this._name = value;
-
-////                }
-
-////            }
-////            get
-////            {
-////                return this._name;
-////            }
-////        }
-////        // write only properties
-////        public int Age
-////        {
-////            set
-////            {
-////                if (value < 0)
-////                {
-////                    Console.WriteLine("Enter positive value");
-
-////                }
-////                else
-////                {
-////                    this._age = value;
-
-////                }
-
-////            }
-
-////        }
-////        // read only
-////        public string Gender
-////        {
-
-////            get
-////            {
-////                return this.gender;
-////            }
-
-
-////        }
-////        //auto implemented
-
-
-////        // we make methds reads only and write only
-
-////    }
-
-
-
-
-////    class Program3
-////    {
-////        static void Main(string[] args)
-////        {
-////            Console.WriteLine("All About the Encapsolations properties");
-////            // make object
-////            Person p1 = new Person();
-////            p1.Name = "Ali Hassan";
-////            Console.WriteLine(p1.Name);
-////            p1.Age = 21;
-////            //  Console.WriteLine(p1.Age);=error
-////            // p1.Gender = "Male";// read only not set
-////            Console.WriteLine(p1.Gender);
-////            p1.lastName = "Hassan";
-////            Console.WriteLine(p1.lastName);
-
-
-////            Console.WriteLine(p1.l2);
-
-////            // static property
-////            Person.UniProperty = "University of Okara";
-////            Console.WriteLine(Person.UniProperty);
-////        }
-////    }
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////// Polimorphisms 
-/////// /////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////namespace Polimorphism
-//////{
-////    // static polymorphism
-////    // operator overloading | method overloading
-////    // many functions with same names
-
-////    /*
-////    class Person
-////    {
-////        public string str;
-////        public int num;
-
-////        // method for operator overloading
-////        public static Person operator + (Person obj1,Person obj2)
-////        {
-////            Person obj3 = new Person();
-////            obj3.str = obj1.str +" "+ obj2.str;
-////            obj3.num = obj1.num  + obj2.num;
-////            return obj3;
-
-////        }
-
-////    }
-////    //
-////    class MyClass
-////    {
-////        public int value;
-
-////        public MyClass(int val)
-////        {
-////            value = val;
-////        }
-
-////        // Overload the + operator
-////        public static MyClass operator +(MyClass obj1, MyClass obj2)
-////        {
-////            int sum = obj1.value + obj2.value;
-////            return new MyClass(sum);
-////        }
-////    }
-////    class Program4
-////    {
-////        //functions overloading
-////       /* public void add()
-////        {
-////            int a = 20;
-////            int b = 34;
-////            int c = a + b;
-////            Console.WriteLine("The sum is:{0}", c);
-
-////        }*/
-////    //public void add(int a)
-////    //{
-
-////    //    int b = 34;
-////    //    int c = a + b;
-////    //    Console.WriteLine("The sum is:{0}", c);
-
-////    //}
-////    //public void add(string a)
-////    //{
-
-
-////    //    string  c = a;
-////    //    Console.WriteLine("The sum is:{0}", c);
-
-////    //}
-
-////    //static void Main(string[] args)
-////    //{
-////    //    Console.WriteLine("All about Polimorphism");
-////    /*
-////    Program4 pi = new Program4();
-////    pi.add();
-////    pi.add(12);
-////    pi.add("Ali Hassan");
-////    */
-////    // operator overloading
-////    /*
-////    Person obj1 = new Person();
-////    obj1.str = "Ali";
-////    obj1.num = 23;
-////    Person obj2 = new Person();
-////    obj2.str = "hassan";
-////    obj2.num = 25;
-////    Person obj3 = obj1 + obj2;
-
-////    Console.WriteLine(obj3.str+ obj3.num);
-////    //MyClass obj1 = new MyClass(10);
-////    //MyClass obj2 = new MyClass(20);
-////    //MyClass obj3 = obj1 + obj2;
-
-////    //Console.WriteLine("obj3.value = {0}", obj3.value);
-
-
-
-////}
-////}
-////*/
-////    // //////////////////////////////////////////////////////////////
-////    // Method Hiding
-////    /*  class MyClass
-//// {
-////    public void show()
-////     {
-////         Console.WriteLine("this is parent class method");
-////     }
-//// }
-//// class MyClass1: MyClass
-//// {
-////     public new void show()
-////     {
-////         //base.show();
-////         Console.WriteLine("this is child class method");
-////     }
-//// }
-
-//// class Program4
-//// {
-////     static void Main(string[] args)
-////     {
-////         // MyClass1 obj1 = new MyClass1();
-////         //obj1.show();
-////         MyClass p = new MyClass1();// run parent method
-
-////         //((MyClass)obj1).show();
-////         p.show();
-
-////         // Output: obj3.value = 30
-////     }
-//// }*/
-
-////    /////////////////////////////////////////
-////    /// Another example of method hiding
-////    /* class Employ
-////     {
-////         public void show()
-////         {
-////             Console.WriteLine("this is Employ class method");
-////         }
-////     }
-////     class PartTimeEmploy : Employ
-////     {
-////         public new void show()
-////         {
-////             // if we want to call parent class method
-////             base.show();
-////            // Console.WriteLine("this is PartTimeEmploy class method");
-////         }
-////     }
-////     class FullTimeEmploy : Employ
-////     {
-////         public new void show()
-////         {
-////             Console.WriteLine("this is FullTimeEmploy class method");
-////         }
-////     }
-
-
-////     class Program4
-////     {
-////         static void Main(string[] args)
-////         {
-////             Console.WriteLine("Ali try try again one day you will became a good ");
-////             PartTimeEmploy PTE = new PartTimeEmploy();
-////             PTE.show();
-
-////         }
-////     }*/
-////    /////////////////////////////////////////////////////////
-////    /// Methor overriding
-////    /*
-////   class Employ
-////   {
-////       public  virtual void show()
-////       {
-////           Console.WriteLine("this is Employ class method");
-////       }
-////   }
-////   //class PartTimeEmploy : Employ
-////   //{
-////   //    public  void show()
-////   //    {
-////   //        // if we want to call parent class method
-////   //        base.show();
-////   //        // Console.WriteLine("this is PartTimeEmploy class method");
-////   //    }
-////   //}
-////   class FullTimeEmploy : Employ
-////   {
-////       public override  void show()
-////       {
-////           Console.WriteLine("this is FullTimeEmploy class method");
-////       }
-////   }
-
-
-////   class Program4
-////   {
-////       static void Main(string[] args)
-////       {
-////           Console.WriteLine("Ali try try again one day you will became a good ");
-////          Employ p = new FullTimeEmploy();
-
-////           p.show();
-
-////       } 
-////   }*/
-////    ///////////////////////////////////////////////////////////
-////    /// Sealed Class in c#
+//   public class Baseclass
+//    {
+//        public int a=345;
+//        public int b;
+//        protected int c;
+//        public void metho()
+//        {
+//            Console.WriteLine("This is public method of the base class");
+//        }
+
+//        public Baseclass(string mesg)
+//        {
+//            Console.WriteLine("This is constructor of Base Class {0}", mesg);
+//        }
+//        protected void SomeMethod()
+//        {
+//            Console.WriteLine("This is a method of the base class.");
+//        }
+//    }
+//    public class Deiveclass : Baseclass
+//    {
+//        public int s;
+//        public Deiveclass() : base("Hello Ali How are You")
+//        {
+//            Console.WriteLine("This is constructor of Derive class");
+//            s = base.a;//
+//        }
+//    }
+
+//    class Program2
+//    {
+//        static void Main(string[] args)
+//        {
+//            //consructors in Inheritancey
+//            Deiveclass m1 = new Deiveclass();
+//            DerivedClass instance = new DerivedClass();
+//            instance.Age = 30;
+//            Console.WriteLine($"Age: {instance.Age}, PublicVar: {instance.PublicVar}, ProtectedVar: {instance.ProtectedVar}");
+//        }
+//    }
+
+
+///////////////////////////////////////////////////////////////  Encapsulation    //////////////////////////////////////////////
+////// Encapsulations: wrape data | set data | get data   "Hide the internal data and provide controlled access to it."
+
+//    class Person
+//    {
+//        // Encapsolation
+//        //make all them private
+//       private  string name;
+//        private int age;
+//        // methods to set data
+//        public void setData(string name, int age)
+//        {
+//            if (string.IsNullOrEmpty(name) && age>0)
+//            {
+//                Console.WriteLine("The name is required age must be positive");
+//            }
+//            else
+//            {
+//                this.name = name;
+//                this.age = age;
+//            }
+//         // we make methds reads only and write only
+//        }
+//        public void getData()
+//        {
+//            Console.WriteLine("You name is : {0}", this.name);
+//            Console.WriteLine("your age is {0}",this.age);
+//        }
+//    }
+
+//     class Program3
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("All About the Encapsolations");
+//            // make object
+//            Person p1 = new Person();
+//            // p1.name = "Ali Hassan";
+//            // p1.age = 12;// not eccapsolation
+//            p1.setData("Ali Hassan", 21);
+//            p1.getData();
+//        }
+//    }
+
+///////////////////////////////////////// #Properties with get and set
+//    class Person
+//    {
+//        // Properties 
+//        // set and get  
+//        private string _name;
+//        private int _age;
+//        private string gender = "Male";
+//        public string lastName { get; set; }
+//        public string l1 { private get; set; }
+//        public string l2 { get; private set; }
+//        // static propert
+//        private static string uniName;
+//        private static string depName;
+//        public static string UniProperty
+//        {
+//            set
+//            {
+//                uniName = value;
+//            }
+//            get
+//            {
+//                return uniName;
+//            }
+//        }
+//        public static string DepProperty { get; set; }
+//        public Person()
+//        {
+//            l2 = "Amjad Sabri";
+//        }
+
+
+//        public string Name
+//        {
+//            set
+//            {
+//                if (string.IsNullOrEmpty(value))
+//                {
+//                    Console.WriteLine("Enter something in name");
+//                }
+//                else
+//                {
+//                    this._name = value;
+//                }
+//            }
+//            get
+//            {
+//                return this._name;
+//            }
+//        }
+
+     // write only properties
+//        public int Age
+//        {
+//            set
+//            {
+//                if (value < 0)
+//                {
+//                    Console.WriteLine("Enter positive value");
+//                }
+//                else
+//                {
+//                    this._age = value;
+//                }
+//            }
+//        }
+
+////// read only
+//        public string Gender
+//        {
+//            get
+//            {
+//                return this.gender;
+//            }
+//        }
+//        //auto implemented
+//        // we make methods reads only and write only
+//    }
+
+//    class Program3
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("All About the Encapsolations properties");
+//            // make object
+//            Person p1 = new Person();
+//            p1.Name = "Ali Hassan";
+//            Console.WriteLine(p1.Name);
+//            p1.Age = 21;
+//            //  Console.WriteLine(p1.Age);=error
+//            // p1.Gender = "Male";// read only not set
+//            Console.WriteLine(p1.Gender);
+//            p1.lastName = "Hassan";
+//            Console.WriteLine(p1.lastName);
+//            Console.WriteLine(p1.l2);
+//            // static property
+//            Person.UniProperty = "University of Okara";
+//            Console.WriteLine(Person.UniProperty);
+//        }
+//    }
+
+
+////////////////////////////////////////////////////   Polymorphism  //////////////////////////////////////////////
+// it means the same method or interface can behave differently depending on the object using it
+//namespace Polimorphism
+//{
+//    // static polymorphism | Compile time Polymorphism
+//    // operator overloading | method overloading
+//    // many functions with same names
+//    class Person
+//    {
+//        public string str;
+//        public int num;
+//        // method for operator overloading
+//        public static Person operator + (Person obj1,Person obj2)
+//        {
+//            Person obj3 = new Person();
+//            obj3.str = obj1.str +" "+ obj2.str;
+//            obj3.num = obj1.num  + obj2.num;
+//            return obj3;
+//        }
+//    }
+//    class MyClass
+//    {
+//        public int value;
+//        public MyClass(int val)
+//        {
+//            value = val;
+//        }
+
+//        // Overload the + operator
+//        public static MyClass operator +(MyClass obj1, MyClass obj2)
+//        {
+//            int sum = obj1.value + obj2.value;
+//            return new MyClass(sum);
+//        }
+//    }
+
+//    class Program4
+//    {
+//     functions overloading
+//        public void add()
+//        {
+//            int a = 20;
+//            int b = 34;
+//            int c = a + b;
+//            Console.WriteLine("The sum is:{0}", c);
+//        }
+//    //public void add(int a)
+//   {
+//       int b = 34;
+//      int c = a + b;
+//   Console.WriteLine("The sum is:{0}", c);
+//    }
+//    //public void add(string a)
+//   {
+//      string  c = a;
+//      Console.WriteLine("The sum is:{0}", c);
+//    }
+//    //static void Main(string[] args)
+//    //{
+//    //    Console.WriteLine("All about Polimorphism");
+//    Program4 pi = new Program4();
+//    pi.add();
+//    pi.add(12);
+//    pi.add("Ali Hassan");
+//    operator overloading
+//    Person obj1 = new Person();
+//    obj1.str = "Ali";
+//    obj1.num = 23;
+//    Person obj2 = new Person();
+//    obj2.str = "hassan";
+//    obj2.num = 25;
+//    Person obj3 = obj1 + obj2;
+//    Console.WriteLine(obj3.str+ obj3.num);
+//    //MyClass obj1 = new MyClass(10);
+//    //MyClass obj2 = new MyClass(20);
+//    //MyClass obj3 = obj1 + obj2;
+//    //Console.WriteLine("obj3.value = {0}", obj3.value);
+//}
+//}
+
+///////////       Method Hiding  Method hiding means a child class creates a method with the same name as a method in the parent class,
+// and the child method hides the parent method.
+
+//     class MyClass
+//  {
+//    public void show()
+//     {
+//         Console.WriteLine("this is parent class method");
+//     }
+//    }
+//     class MyClass1: MyClass
+//   {
+//     public new void show()
+//     {
+//         base.show();
+//         Console.WriteLine("this is child class method");
+//     }
+//   }
+
+// class Program4
+// {
+//     static void Main(string[] args)
+//     {
+//          MyClass1 obj1 = new MyClass1();
+//         obj1.show();
+//         MyClass p = new MyClass1();// run parent method
+
+//         ((MyClass)obj1).show();
+//         p.show();
+//         // Output: obj3.value = 30
+//     }
+// }
+
+//////// Another example of method hiding
+//     class Employ
+//     {
+//         public void show()
+//         {
+//             Console.WriteLine("this is Employ class method");
+//         }
+//     }
+
+//     class PartTimeEmploy : Employ
+//     {
+//         public new void show()
+//         {
+//             // if we want to call parent class method
+//             base.show();
+//            // Console.WriteLine("this is PartTimeEmploy class method");
+//         }
+//     }
+//     class FullTimeEmploy : Employ
+//     {
+//         public new void show()
+//         {
+//             Console.WriteLine("this is FullTimeEmploy class method");
+//         }
+//     }
+
+
+//     class Program4
+//     {
+//         static void Main(string[] args)
+//         {
+//             Console.WriteLine("Ali try try again");
+//             PartTimeEmploy PTE = new PartTimeEmploy();
+//             PTE.show();
+
+//         }
+//     }
+
+
+/////////////// Runtime Polymorphism (Method Overriding)
+     // Runtime polymorphism (dynamic polymorphism) in C# is achieved through method overriding. It occurs when a derived class provides a specific implementation of a method already defined in the base class, using the same method name, parameters, and return type.
+     // This allows the derived class to modify or extend the behavior of the inherited method.
+     //     Key Points:
+     // Virtual Method: The base class method must be declared as virtual to allow overriding.
+     //     Override Keyword: The derived class method must use the override keyword to provide a new implementation.
+
+//   class Employ
+//   {
+//       public  virtual void show()
+//       {
+//           Console.WriteLine("this is Employ class method");
+//       }
+//   }
+//  class PartTimeEmploy : Employ
+//   {
+//      public  void show()
+//      {
+//         // if we want to call parent class method
+//         base.show();
+//        // Console.WriteLine("this is PartTimeEmploy class method");
+//     }
+//   }
+//   class FullTimeEmploy : Employ
+//   {
+//       public override  void show()
+//       {
+//           Console.WriteLine("this is FullTimeEmploy class method");
+//       }
+//   }
+
+
+//   class Program4
+//   {
+//       static void Main(string[] args)
+//       {
+//           Console.WriteLine("Ali try try again");
+//          Employ p = new FullTimeEmploy();
+//           p.show();
+//       } 
+//   }
+
+////////////////////////////// Sealed Class in c#
 ////    /// prevent inheritance | no child classes
-////    /// // Sealed methods
-////    /*
-////    class Employ
-////    {
-////        public virtual void show()
-////        {
-////            Console.WriteLine("this is Employ class method");
-////        }
-////    }
+///////// Sealed methods
+//    class Employ
+//    {
+//        public virtual void show()
+//        {
+//            Console.WriteLine("this is Employ class method");
+//        }
+//    }
 
-////    class FullTimeEmploy : Employ
-////    {
-////        public override void show()
-////        {
-////            Console.WriteLine("this is FullTimeEmploy class method");
-////        } 
-////    }
-////    class PartEmploy : FullTimeEmploy
-////    {
-////        public sealed override void show() // then method is never ovverrde again
-////        {
-////            Console.WriteLine("this is PartTimeEmploy class method");
-////        }
-////    }
-
-
-////    class Program4
-////    {
-////        static void Main(string[] args)
-////        {
-////            Console.WriteLine("All about Sealed class in C#");
-////            PartEmploy p = new PartEmploy();
-////            p.show();
-
-////        }
-////    }
-////*/
-////    /////////////////////////////////////////////////
-////    ///  Indexers in c#
-////    ///  
-
-////    class Employ
-////    {
-////        private int[] Ages = new int[4];
-////        public int a = 12;
-////        public int this[int index]
-////        {
-////            set
-////            {
-////                if (index >= 0 && index < Ages.Length)
-////                {
-////                    if (value > 0)
-////                    {
-////                        Ages[index] = value;
-
-////                    }
-////                    else
-////                    {
-////                        Console.WriteLine("Please enter positive value");
-
-////                    }
-
-////                }
-////                else
-////                {
-////                    Console.WriteLine("Invalid Index !!");
-////                }
-
-////            }
-////            get
-////            { /* return the specified index here */
-
-////                return Ages[index];
-////            }
-
-////        }
-
-////    }
-
-////    class Program4
-////    {
-////        static void Main(string[] args)
-////        {
-////            Console.WriteLine("All about indexers in C#");
-
-////            Employ p = new Employ();
-////            p[0] = 3;
-////            Console.WriteLine(p[0]);
-////            p[1] = -3;
-////            p[4] = 5;
-////            Console.WriteLine(p.a);
-
-////        }
-////    }
+//    class FullTimeEmploy : Employ
+//    {
+//        public override void show()
+//        {
+//            Console.WriteLine("this is FullTimeEmploy class method");
+//        } 
+//    }
+//    class PartEmploy : FullTimeEmploy
+//    {
+//        public sealed override void show() // then method is never ovverrde again
+//        {
+//            Console.WriteLine("this is PartTimeEmploy class method");
+//        }
+//    }
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-/////// Delegates 
-/////// //////////////////////////////////////////////////////////////////////////////////////
-////namespace Delegates
-////{
+//    class Program4
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("All about Sealed class in C#");
+//            PartEmploy p = new PartEmploy();
+//            p.show();
+//        }
+//    }
 
-////    // Delegates in C#
-////    // Delegates are hold reference of methods
-////    // we can call a method by its Reference
-////    // reference type delegates are
+///////////////////////////////  Indexers in c#
 
-////    /*
-////    public delegate void Calc(int a, int b);
-////    // single casr delegate
-////    public delegate void Singledel();
-////    /*
-////        public class Program5
-////        {
-////            public static void single()
-////            {
-////                Console.WriteLine("This function is called by single delegate");
-////            } 
-////            public static void addition(int a, int b)
-////            {
-////                Console.WriteLine("The A is : {0} and b is :{1}",a,b);
+//    class Employ
+//    {
+//        private int[] Ages = new int[4];
+//        public int a = 12;
+//        public int this[int index]
+//        {
+//            set
+//            {
+//                if (index >= 0 && index < Ages.Length)
+//                {
+//                    if (value > 0)
+//                    {
+//                        Ages[index] = value;
+//                    }
+//                    else
+//                    {
+//                        Console.WriteLine("Please enter positive value");
+//                    }
+//                }
+//                else
+//                {
+//                    Console.WriteLine("Invalid Index !!");
+//                }
+//            }
+//            get
+//            { /* return the specified index here */
+//                return Ages[index];
+//            }
+//        }
+//    }
+     
+// class Program4
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("All about indexers in C#");
+//            Employ p = new Employ();
+//            p[0] = 3;
+//            Console.WriteLine(p[0]);
+//            p[1] = -3;
+//            p[4] = 5;
+//            Console.WriteLine(p.a);
+//        }
+//    }
 
 
 
-////            }
-////            // subtraction
-////            public static void sub(int a, int b)
-////            {
-////                Console.WriteLine("The A is : {0} and b is :{1}", a, b);
+////////////////////////////// Delegates: A delegate is a type-safe reference to a method.
 
-////            }
-////            // mul
-////            public static void mul(int a, int b)
-////            {
-////                Console.WriteLine("The A is : {0} and b is :{1}", a, b);
+//namespace Delegates
+//{
+//    // Delegates in C#
+//    // Delegates are hold reference of methods
+//    // we can call a method by its Reference
+//    // reference type delegates are
 
-////            }
-////            static void Main(string[] args)
-////            {
-////                Console.WriteLine("Ali Delegates Finish Today ");
-////                Calc obj = new Calc(Program5.addition);
-////                obj.Invoke(12, 34);
-////                obj = sub;
-////                obj(12, 56);
-////                obj = mul;
-////                obj(90, 78);
-////                // its called only the single functions
-////                Singledel p = new Singledel(Program5.single);
-////                p();       }
-////        }*/
-////    /////////////////////////////////////////////////
-////    ///  Types of Delegates     
+//    public delegate void Calc(int a, int b);
+//    // single casr delegate
+//    public delegate void Singledel();
+//    public class Program5
+//        {
+//            public static void single()
+//            {
+//                Console.WriteLine("This function is called by single delegate");
+//            } 
+//            public static void addition(int a, int b)
+//            {
+//                Console.WriteLine("The A is : {0} and b is :{1}",a,b);
+//            }
+//            // subtraction
+//            public static void sub(int a, int b)
+//            {
+//                Console.WriteLine("The A is : {0} and b is :{1}", a, b);
 
-////    //  multiple delegates
+//            }
+//            // mul
+//            public static void mul(int a, int b)
+//            {
+//                Console.WriteLine("The A is : {0} and b is :{1}", a, b);
 
-////    public delegate void Calc(int a, int b);
-////    public delegate void def();
-////    // multicast delegates
-////    public delegate void Mcasr(int a, int b);
+//            }
+//            static void Main(string[] args)
+//            {
+//                Console.WriteLine("Ali Delegates Finish Today ");
+//                Calc obj = new Calc(Program5.addition);
+//                obj.Invoke(12, 34);
+//                obj = sub;
+//                obj(12, 56);
+//                obj = mul;
+//                obj(90, 78);
+//                // its called only the single functions
+//                Singledel p = new Singledel(Program5.single);
+//                p();       }
+//        }*/
+//    /////////////////////////////////////////////////
+//    ///  Types of Delegates     
 
-////    public class Program5
-////    {
-////        public static void single()
-////        {
-////            Console.WriteLine("This function is called by single delegate");
-////        }
-////        // 3 parameter func
-////        public static void add(int a, int b, string c)
-////        {
-////            Console.WriteLine("The A is : {0} and b is :{1}={2}", a, b, c);
-////        }
-////        public static void addition(int a, int b)
-////        {
-////            int c = a + b;
-////            Console.WriteLine("The sum is :{0} ", c);
+//    //  multiple delegates
 
-////        }
-////        // subtraction
-////        public static void sub(int a, int b)
-////        {
-////            int c = a - b;
-////            Console.WriteLine("The sub is :{0} ", c);
-////        }
-////        // mul
-////        public static void mul(int a, int b)
-////        {
-////            int c = a * b;
-////            Console.WriteLine("The Mul is :{0} ", c);
+//    public delegate void Calc(int a, int b);
+//    public delegate void def();
+//    // multicast delegates
+//    public delegate void Mcasr(int a, int b);
+
+//    public class Program5
+//    {
+//        public static void single()
+//        {
+//            Console.WriteLine("This function is called by single delegate");
+//        }
+//        // 3 parameter func
+//        public static void add(int a, int b, string c)
+//        {
+//            Console.WriteLine("The A is : {0} and b is :{1}={2}", a, b, c);
+//        }
+//        public static void addition(int a, int b)
+//        {
+//            int c = a + b;
+//            Console.WriteLine("The sum is :{0} ", c);
+
+//        }
+//        // subtraction
+//        public static void sub(int a, int b)
+//        {
+//            int c = a - b;
+//            Console.WriteLine("The sub is :{0} ", c);
+//        }
+//        // mul
+//        public static void mul(int a, int b)
+//        {
+//            int c = a * b;
+//            Console.WriteLine("The Mul is :{0} ", c);
 
 
-////        }
-////        static void Main(string[] args)
-////        {
-////            Console.WriteLine("Ali Delegates Finish Today ");
-////            //Calc obj = new Calc(Program5.addition);
-////            //obj(45, 78);
-////            // without parameter function delegate
+//        }
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("Ali Delegates Finish Today ");
+//            //Calc obj = new Calc(Program5.addition);
+//            //obj(45, 78);
+//            // without parameter function delegate
 
-////            //def p = new def(single);
-////            //p();
+//            //def p = new def(single);
+//            //p();
 
-////            // multicast delegates objects
-////            Calc obj = new Calc(Program5.addition);
-////            obj += sub;
-////            obj += mul;
-////            obj(45, 67);
-////        }
-////    }
-////}
+//            // multicast delegates objects
+//            Calc obj = new Calc(Program5.addition);
+//            obj += sub;
+//            obj += mul;
+//            obj(45, 67);
+//        }
+//    }
+//}
 
-////////////////////////////////////////////////////////////////////////////////////////////
-/////// Anounimouse Functions 
-/////// ///////////////////////////////////////////////////////////////////////
-////namespace AnounimouseFunction
-////{
-////    /*
-////        public delegate void Calc(int a, int b);
-////        public delegate int Recalc(int a, int b);
-////        public class Program6
-////        {
 
-////            static void Main(string[] args)
-////            {
-////                Console.WriteLine("All about Anounimouse Functions");
-////                Calc obj = delegate (int a, int b)
-////                {
-////                    a = a + b;
-////                    Console.WriteLine("The sum is : {0}", a);
-////                };
-////                obj(12, 45);
-////                Recalc p = delegate (int a, int b)
-////                {
-////                    a = a + b;
-////                    Console.WriteLine("The sum is : {0}", a);
-////                    return a;
-////                };
-////                Console.WriteLine("Return is : {0} ", p(12, 45));
-////            }
-////        }
+/////////////////////////////////////// Anonymous Function in C#
 
-////        */
+//namespace AnounimouseFunction
+//{
+//        public delegate void Calc(int a, int b);
+//        public delegate int Recalc(int a, int b);
+//        public class Program6
+//        {
+//            static void Main(string[] args)
+//            {
+//                Console.WriteLine("All about Anounimouse Functions");
+//                Calc obj = delegate (int a, int b)
+//                {
+//                    a = a + b;
+//                    Console.WriteLine("The sum is : {0}", a);
+//                };
+//                obj(12, 45);
+//                Recalc p = delegate (int a, int b)
+//                {
+//                    a = a + b;
+//                    Console.WriteLine("The sum is : {0}", a);
+//                    return a;
+//                };
+//                Console.WriteLine("Return is : {0} ", p(12, 45));
+//            }
+//        }
+// 
 ////    ///////////////////////////////////////////////    //////////////
-////    ///    Lambda expressions
+//    ///    Lambda expressions
 
-////    public delegate void Calc(int a, int b);
-////    public delegate int Cal(int a, int b);
-////    public class Program6
-////    {
-////        static void Main(string[] args)
-////        {
-////            Console.WriteLine("All about Anounimouse Functions");
-////            Calc obj = delegate (int a, int b)
-////            {
-////                a = a + b;
-////                Console.WriteLine("The sum is : {0}", a);
-////            };
-////            obj(12, 45);
-////            //   lambda 
-////            Calc lambda = (int a, int b) =>
-////            {
-////                a = a + b;
-////                Console.WriteLine("The lambda functions is ", a);
-////            };
-////            lambda(12, 45);
-////            // expresion lambda
-////            Cal explambda = (a, b) => a = a + b;
+//    public delegate void Calc(int a, int b);
+//    public delegate int Cal(int a, int b);
+//    public class Program6
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("All about Anounimouse Functions");
+//            Calc obj = delegate (int a, int b)
+//            {
+//                a = a + b;
+//                Console.WriteLine("The sum is : {0}", a);
+//            };
+//            obj(12, 45);
+//            //   lambda 
+//            Calc lambda = (int a, int b) =>
+//            {
+//                a = a + b;
+//                Console.WriteLine("The lambda functions is ", a);
+//            };
+//            lambda(12, 45);
+//            // expresion lambda
+//            Cal explambda = (a, b) => a = a + b;
+//            Console.WriteLine(explambda(12, 34));
+//        }
+//    }
+//}
 
-////            Console.WriteLine(explambda(12, 34));
-////        }
+//////////////////////////////////////////// Abstarction in c#   /////////////////////////////////////////////////
 
+///// abstactions = characteristics and behaviors of an object while hiding unnecessary details. 
+//namespace _07Abstraction
+//{
 
-////    }
-////}
-/////////////////////////////////////////////////////////////////////////////////////////////////
-/////// Abstarction in c#
-/////// ////////////////////////////////////////////////////////////////////////////////////////
-/////// abstactions = characteristics and behaviors of an object while hiding unnecessary details. 
-////namespace _07Abstraction
-////{
-////    /*
-////        class Employ
-////        {
-////            public int EmpId;
-////            public string EmpName;
-////            public double grosPay;
-////            public double tex = 0.1;
-////            double netsalary;
+//        class Employ
+//        {
+//            public int EmpId;
+//            public string EmpName;
+//            public double grosPay;
+//            public double tex = 0.1;
+//            double netsalary;
 
-////            public Employ(int id, string name, double payl)
-////            {
-////                this.EmpId = id;
-////                this.EmpName = name;
-////                this.grosPay = payl;
-////            }
+//            public Employ(int id, string name, double payl)
+//            {
+//                this.EmpId = id;
+//                this.EmpName = name;
+//                this.grosPay = payl;
+//            }
 
-////             void calculate()
-////            {
-////                if( grosPay>= 30000)
-////                {
-////                    netsalary = grosPay-300 ;
-////                    Console.WriteLine("You salary is {0}",netsalary);
+//             void calculate()
+//            {
+//                if( grosPay>= 30000)
+//                {
+//                    netsalary = grosPay-300 ;
+//                    Console.WriteLine("You salary is {0}",netsalary);
 
-////                }
-////                else
-////                {
+//                }
+//                else
+//                {
 
-////                    Console.WriteLine("You salary is {0}", netsalary);
+//                    Console.WriteLine("You salary is {0}", netsalary);
 
-////                }
+//                }
 
 
 
-////            }
+//            }
 
-////            public void showDetails()
-////            {
-////                this.calculate();
+//            public void showDetails()
+//            {
+//                this.calculate();
 
-////            }
+//            }
 
 
 
 
 
 
-////        }
-////        public class Program7 
-////        {
-////            static void Main(string[] args)
-////            {
-////                Console.WriteLine("Abstractions");
-////                Employ ali = new Employ(12,"Ali Hassan",45000);
-////                ali.showDetails();
+//        }
+//        public class Program7 
+//        {
+//            static void Main(string[] args)
+//            {
+//                Console.WriteLine("Abstractions");
+//                Employ ali = new Employ(12,"Ali Hassan",45000);
+//                ali.showDetails();
 
-////            }
-////        }*/
-////    /////////////////////////////////////////////
-////    /// Abstract clas and abstract methods
-////    /// no instance   <summary>
-////    /// Abstract clas and abstract methods
-////    /// </summary>
-////    /* abstract class Person
-////     {
-
-
-
-////          public int age;
-////         public string name;
-////         public long phone;
-////         // abstract Properties
-////       //  public abstract int Id { get; set; }
-////         public abstract string Name { get; set; }
-
-////         public abstract void show_Detals();
-
-
-////     }
-
-////     class student: Person
-////     {
-////         public int roll;
-////         public int fees;
-////         public override  void show_Detals()
-////         {
-////             Console.WriteLine("This is the Student class{0}",this.name);
-////         }
-////         // overide the abstract clas properties 
-
-////         public override string Name {
-////             set
-////             {
-////                 this.name = value;
-////             }
-
-
-////             get
-////             {
-////                 return this.name;
-////             }
-
-
-
-////              }
-
-////     }
-////     class teacher:Person
-////     {
-////         public string qualification;
-////         public int salery;
-////         public override  void show_Detals()
-////         {
-////             Console.WriteLine("This is the teacher class{0}",this.name);
-////         }
-////         // override the abstract properties
-////         public override string Name
-////         {
-////             set
-////             {
-////                 this.name = value;
-////             }
-
-
-////             get
-////             {
-////                 return this.name;
-////             }
-
-
-
-////         }
-
-////     }
-////     public class Program7
-////     {
-////         static void Main(string[] args)
-////         {
-////             Console.WriteLine("Abstractions");
-////             student ali = new student();
-////             ali.name = "Ali Hassan";
-////             ali.age = 21;
-////             ali.roll = 5063;
-////             ali.phone = 03133324617;
-////             ali.show_Detals();
-
-////             // teacher class 
-////             teacher aslam = new teacher();
-////             aslam.name = "Aslam Shehzad";
-////             aslam.show_Detals();
-////             aslam.Name = "Ali Hassan";
-////             Console.WriteLine(aslam.Name); 
-
-
-
-
-
-////         }
-////     }*/
+//            }
+//        }
+//    /////////////////////////////////////////////
+//    /// Abstract clas and abstract methods
+//    /// no instance   <summary>
+//    /// Abstract clas and abstract methods
+//    /// </summary>
+//    /* abstract class Person
+//     {
+//          public int age;
+//         public string name;
+//         public long phone;
+//         // abstract Properties
+//       //  public abstract int Id { get; set; }
+//         public abstract string Name { get; set; }
+//         public abstract void show_Detals();
+//     }
+//     class student: Person
+//     {
+//         public int roll;
+//         public int fees;
+//         public override  void show_Detals()
+//         {
+//             Console.WriteLine("This is the Student class{0}",this.name);
+//         }
+//         // overide the abstract clas properties 
+//         public override string Name {
+//             set
+//             {
+//                 this.name = value;
+//             }
+//             get
+//             {
+//                 return this.name;
+//             }
+//              }
+//     }
+//     class teacher:Person
+//     {
+//         public string qualification;
+//         public int salery;
+//         public override  void show_Detals()
+//         {
+//             Console.WriteLine("This is the teacher class{0}",this.name);
+//         }
+//         // override the abstract properties
+//         public override string Name
+//         {
+//             set
+//             {
+//                 this.name = value;
+//             }
+//             get
+//             {
+//                 return this.name;
+//             }
+//         }
+//     }
+//     public class Program7
+//     {
+//         static void Main(string[] args)
+//         {
+//             Console.WriteLine("Abstractions");
+//             student ali = new student();
+//             ali.name = "Ali Hassan";
+//             ali.age = 21;
+//             ali.roll = 5063;
+//             ali.phone = 03133324617;
+//             ali.show_Detals();
+//             // teacher class 
+//             teacher aslam = new teacher();
+//             aslam.name = "Aslam Shehzad";
+//             aslam.show_Detals();
+//             aslam.Name = "Ali Hassan";
+//             Console.WriteLine(aslam.Name); 
+//         }
+//    }
 
 ////    //////////////////////////////////////////
 ////    /// interfaces  
 ////    ///  contract b/t interfaces and class 
 ////    ///  all the properties are abstracted and implemented in child class 
-////    ///  
-
 ////    //interfaces inheritance
-////    /*
-////           interface Employ
 
-////        {
-////            void show();
-////        }
-////        interface  Employ2
+//           interface Employ
 
-////        {
-////            void show1();
-////        }
-////        interface Employ3:Employ,Employ2
+//        {
+//            void show();
+//        }
+//        interface  Employ2
 
-////        {
-////            void show2();
-////        }
-////        class InheritedEmploys : Employ3
-////        {
-////            public void show()
-////            {
-////                Console.WriteLine("This is the 1  method of Interface");
-////            }
-////            public void show1()
-////            {
-////                Console.WriteLine("This is the 2  method of Interface");
-////            }
-////            public void show2()
-////            {
-////                Console.WriteLine("This is the  3 method of Interface");
-////            }
-////        }
+//        {
+//            void show1();
+//        }
+//        interface Employ3:Employ,Employ2
 
-////        public class Program7
-////        {
-////            static void Main(string[] args)
-////            {
-////                Console.WriteLine("Abstractions");
-////                // partime employs class
-////                InheritedEmploys p = new InheritedEmploys();
-////                p.show();
-////                p.show1();
-////                p.show2();
-////                // we also do that
-////                Employ3 p1 = new InheritedEmploys();
-////                p1.show1();
-////            }
-////        }*/
+//        {
+//            void show2();
+//        }
+//        class InheritedEmploys : Employ3
+//        {
+//            public void show()
+//            {
+//                Console.WriteLine("This is the 1  method of Interface");
+//            }
+//            public void show1()
+//            {
+//                Console.WriteLine("This is the 2  method of Interface");
+//            }
+//            public void show2()
+//            {
+//                Console.WriteLine("This is the  3 method of Interface");
+//            }
+//        }
 
-////    /// Explicit interface types inplementation
-////    interface Employ
-////    {
-////        void show();
-////    }
-////    interface Employ2
+//        public class Program7
+//        {
+//            static void Main(string[] args)
+//            {
+//                Console.WriteLine("Abstractions");
+//                // partime employs class
+//                InheritedEmploys p = new InheritedEmploys();
+//                p.show();
+//                p.show1();
+//                p.show2();
+//                // we also do that
+//                Employ3 p1 = new InheritedEmploys();
+//                p1.show1();
+//            }
+//        }
 
-////    {
-////        void show();
-////    }
-////    interface Employ3
-////    {
-////        void show();
-////    }
+//    /// Explicit interface types inplementation
+//    interface Employ
+//    {
+//        void show();
+//    }
+//    interface Employ2
+
+//    {
+//        void show();
+//    }
+//    interface Employ3
+//    {
+//        void show();
+//    }
 
 
-////    class InheritedEmploys : Employ3, Employ2, Employ
-////    {
-////        void Employ.show()
-////        {
-////            Console.WriteLine("This is the Employ1  method of Interface");
-////        }
-////        void Employ2.show()
-////        {
-////            Console.WriteLine("This is the Employ2  method of Interface");
-////        }
-////        void Employ3.show()
-////        {
-////            Console.WriteLine("This is the Employ3  method of Interface");
-////        }
+//    class InheritedEmploys : Employ3, Employ2, Employ
+//    {
+//        void Employ.show()
+//        {
+//            Console.WriteLine("This is the Employ1  method of Interface");
+//        }
+//        void Employ2.show()
+//        {
+//            Console.WriteLine("This is the Employ2  method of Interface");
+//        }
+//        void Employ3.show()
+//        {
+//            Console.WriteLine("This is the Employ3  method of Interface");
+//        }
+//    }
 
-////    }
+//    public class Program7
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("Abstractions");
+//            // partime employs class
+//            InheritedEmploys p = new InheritedEmploys();
+//            ((Employ)p).show();
+//            ((Employ3)p).show();
+//            ((Employ2)p).show();
+//        }
+//    }
+//}
 
-////    public class Program7
-////    {
-////        static void Main(string[] args)
-////        {
-////            Console.WriteLine("Abstractions");
-////            // partime employs class
-////            InheritedEmploys p = new InheritedEmploys();
-////            ((Employ)p).show();
-////            ((Employ3)p).show();
-////            ((Employ2)p).show();
-////        }
-////    }
-////}
-////////////////////////////////////////////////////////////////////////////////////////////////
-///// Generics and Generics methods 
-///// /////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////// Generics and Generics methods 
 //namespace _08_Generics
 //{
 //    /// Generics are used to make functions class which accept all kinds of data
@@ -2390,9 +2262,10 @@
 //               Console.WriteLine(Example.calculate(10,10));
 
 //           }
-//       }*/
-//    ///////////////////////////////////////
-//    // Generics in classes
+//       }
+
+
+///////////////////////////////////////////////////////////////////////    Generics in classes
 
 //    /// Generics are used to make functions class which accept
 //    /// all kinds of data
@@ -2415,22 +2288,13 @@
 //             set
 //             {
 //                 this.age = value;
-
 //             }
 //             get
 //             {
 //                 return this.age ;
-
 //             }
-
-
-
 //         }
-
 //     }
-
-
-
 //     class Program
 //     {
 //         static void Main(string[] args)
@@ -2441,14 +2305,12 @@
 //             Console.WriteLine(e1.getBox());
 //             e.Age = 21;
 //             Console.WriteLine(e.Age);
-
 //         }
 //     }
-//     */
-//    /////////////////////////////////////////////////////////////////////////////////////////
-//    // Collections in c#
+
+///////////////////////////////////////////////////////// Collections in c#
 //    // Generics and non Generics
-//    /////////////////////////////////////////////////////////////////////////////////////////
+
 //    class Program
 //    {
 //        static void Main(string[] args)
@@ -2468,13 +2330,14 @@
 //        }
 //    }
 //}
-////////////////////////////////////////////////////////////////////////////////////////////////
-///// Non-Generic Collections 
-///// /////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////     Non-Generic Collections 
+
 //namespace _09_Non_Generics_collections
 //{
 //    // arraylist collections
-//    /*  public class Program
+//    public class Program
 //      {
 //          static void Main(string[] args)
 //          {
@@ -2500,7 +2363,7 @@
 
 
 //          }
-//      } */
+//      } 
 
 //    /// <summary>
 //    ///   //////////////////////////////////////////////////////
@@ -2508,18 +2371,10 @@
 //    //  Hash Table collection in c# 
 //    // store data in key values Pairs
 
-//    /*
 //    public class Program
 //    {
-
-
-
 //        static void Main(string[] args)
 //        {
-
-
-
-
 //            Console.WriteLine("All About Non-Generics Collection");
 //            Hashtable ht = new Hashtable();
 //            ht.Add("Id", 121);
@@ -2535,12 +2390,9 @@
 //                 {"name","Ali Hassan" },
 //                  {false,"yes its false" },
 //                   {"roll",5063 },
-
-
 //            };
 //            Console.WriteLine(ht1[12<5]);
 //            Console.WriteLine(ht1[14-2]);
-
 //            // methods of HashTable
 //            // ADD | Remove 
 //            foreach(object key in ht1.Keys)
@@ -2555,7 +2407,6 @@
 //            {
 //                Console.WriteLine(key + ":  " + ht1[key]);
 //            }
-
 //            // Remove 
 //            ht1.Remove(12);
 //            Console.WriteLine("after remove");
@@ -2570,28 +2421,15 @@
 //            Console.WriteLine(ht1.ContainsValue(5063));
 //            // hashcode
 //            Console.WriteLine(ht1.Count);
-
-
-
-
-
 //        }
-//    }*/
+//    }
 
-//    /////////////////////////////////////////////
-//    // stack non generic collections 
-//    /*
+
+/////////////////////////////////////////////////    stack non generic collections 
 //    public class Program
 //    {
-
-
-
 //        static void Main(string[] args)
 //        {
-
-
-
-
 //            Console.WriteLine("All About Non-Generics Collection");
 //            Stack s = new Stack();
 //            s.Push("Ali");
@@ -2609,22 +2447,14 @@
 
 
 //        }
-//    }*/
+//    }
 
-//    /////////////////////////////////////////////
-//    // Que non generic collections 
-//    /*
+
+/////////////////////////////////////////////////    Que non generic collections 
 //    public class Program
 //    {
-
-
-
 //        static void Main(string[] args)
 //        {
-
-
-
-
 //            Console.WriteLine("All About Non-Generics Collection");
 //                Queue q = new Queue();
 //                q.Enqueue("Ali Hassan");
@@ -2637,13 +2467,10 @@
 //                {
 //                    Console.WriteLine(item);
 //                }
-
 //        }
 //    }
-//        */
 
-//    /////////////////////////////////////////////
-//    // Diffrence betweeen Generics and non Generics
+/////////////////////////////////////////////// Diffrence betweeen Generics and non Generics
 //    public class Program
 //    {
 //        static void Main(string[] args)
@@ -2651,8 +2478,6 @@
 //            Console.WriteLine("All About Non-Generics Collection");
 //            int[] arr = new int[4];
 //            arr[0] = 2;
-
-
 //        }
 //    }
 
